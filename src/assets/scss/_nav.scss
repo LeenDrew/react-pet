@@ -1,0 +1,12 @@
+.nav {
+  justify-content: center;
+
+  &__link {
+    display: block;
+    transition: all .15s ease-out;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 0 .5rem;
+  }
+}
