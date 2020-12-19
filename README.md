@@ -8,7 +8,34 @@
 * **react-router-dom** для роутинга страниц.
 * **node-sass** для компиляции scss стилей.
 * **axios** для работы с сервером.
+* **eslint** для линтинга кода.
+* **eslint-config-airbnb** как конфиг линтера.
+* **bootstrap** для базовых стилей элементов.
+* **placehold.it** для заглушки изображений.
+* **jsonplaceholder.typicode.com** для имитации ответа сервера.
 
 ## Структура проекта
 
-
+```
+project
+│   README.md
+│   index.js
+│
+└───pages
+│   │   Main.js
+│   │   News.js
+│   │   Profile.js
+│   
+└───components
+│   │   Header.js
+│   │   Nav.js
+│   │   Footer.js
+│   │   Login.js
+│
+└───assets
+│   │
+│   └───img
+│   │
+│   └───scss
+│
+```
