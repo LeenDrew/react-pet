@@ -29,7 +29,6 @@
 
 ```
 web-lab6-react
-│
 ├── index.js
 ├── README.md
 ├── package.json
@@ -37,22 +36,19 @@ web-lab6-react
 ├── .eslintrc.json
 ├── .gitignore
 │
-└── public
-│   │
+├── public
 │   ├── index.html
 │   ├── favicon.ico
 │   └── manifest.json
 │
 └── src
     │
-    └── pages
-    │   │
+    ├── pages
     │   ├── Main.js
     │   ├── News.js
     │   └── Profile.js
-    │   
-    └── components
-    │   │
+    │
+    ├── components
     │   ├── Header.js
     │   ├── Nav.js
     │   ├── Footer.js
@@ -60,12 +56,10 @@ web-lab6-react
     │
     └── assets
         │
-        └── img
-        │   │
+        ├── img
         │   └── logo.svg
         │
         └── scss
-            │
             ├── _base.scss
             ├── _header.scss
             ├── _nav.scss
