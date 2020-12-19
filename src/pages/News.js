@@ -1,72 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import NewsArticle from '../components/NewsArticle';
 
 function News() {
+  const [newsArticleList, setNewsArticleList] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://jsonplaceholder.typicode.com/posts?_limit=9')
+      .then((response) => setNewsArticleList(response.data));
+  }, []);
+
   return (
     <div className="row news-article-container">
-      <div className="col-xs-4">
-        <NewsArticle
-          imgAlt="Описание фото"
-          title="Тайтл"
-          bodyText="Текст"
-        />
-      </div>
-      <div className="col-xs-4">
-        <NewsArticle
-          imgAlt="Описание фото"
-          title="Тайтл"
-          bodyText="Текст"
-        />
-      </div>
-      <div className="col-xs-4">
-        <NewsArticle
-          imgAlt="Описание фото"
-          title="Тайтл"
-          bodyText="Текст"
-        />
-      </div>
-      <div className="col-xs-4">
-        <NewsArticle
-          imgAlt="Описание фото"
-          title="Тайтл"
-          bodyText="Текст"
-        />
-      </div>
-      <div className="col-xs-4">
-        <NewsArticle
-          imgAlt="Описание фото"
-          title="Тайтл"
-          bodyText="Текст"
-        />
-      </div>
-      <div className="col-xs-4">
-        <NewsArticle
-          imgAlt="Описание фото"
-          title="Тайтл"
-          bodyText="Текст"
-        />
-      </div>
-      <div className="col-xs-4">
-        <NewsArticle
-          imgAlt="Описание фото"
-          title="Тайтл"
-          bodyText="Текст"
-        />
-      </div>
-      <div className="col-xs-4">
-        <NewsArticle
-          imgAlt="Описание фото"
-          title="Тайтл"
-          bodyText="Текст"
-        />
-      </div>
-      <div className="col-xs-4">
-        <NewsArticle
-          imgAlt="Описание фото"
-          title="Тайтл"
-          bodyText="Текст"
-        />
-      </div>
+      {newsArticleList.map((newsArticleItem) => (
+        <div className="col-lg-4 col-xs-12 col-sm-6 my-col">
+          <NewsArticle
+            key={newsArticleItem.id}
+            title={newsArticleItem.title}
+            bodyText={newsArticleItem.body}
+          />
+        </div>
+      ))}
     </div>
   );
 }

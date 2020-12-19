@@ -1,8 +1,9 @@
 .news-article-container {
-  display: flex;
   justify-content: center;
-  
-  > * {
-    margin: .5rem;
+  margin: 1rem 0;
+
+  .my-col{
+    margin-bottom: 1rem;
+    display: flex;
   }
 }

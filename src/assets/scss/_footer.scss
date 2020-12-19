@@ -1,21 +1,10 @@
 .footer {
-  margin-top: auto;
   background-color: #fff;
   padding: .5rem 0;
 
   &__container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
-    * + * {
-      margin-left: 1rem;
-    }
-
-    @media (max-width: 424px) {
-      justify-content: center;
-    }
+    justify-content: center;
   }
 
   .about-author-container {
