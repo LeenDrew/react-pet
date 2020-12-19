@@ -4,6 +4,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: .5rem;
+
+  .card-img-top {
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+  }
 
   .card-body {
     display: flex;

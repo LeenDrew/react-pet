@@ -29,48 +29,52 @@
 
 ```
 web-lab6-react
-│   index.js
-│   README.md
-│   package.json
-│   package-lock.json
-│   .eslintrc.json
-│   .gitignore
 │
-└───public
+├── index.js
+├── README.md
+├── package.json
+├── package-lock.json
+├── .eslintrc.json
+├── .gitignore
+│
+└── public
 │   │
-│   │   index.html
-│   │   favicon.ico
-│   │   manifest.json
+│   ├── index.html
+│   ├── favicon.ico
+│   └── manifest.json
 │
-└───src
+└── src
     │
-    └───pages
-    │   │   Main.js
-    │   │   News.js
-    │   │   Profile.js
+    └── pages
+    │   │
+    │   ├── Main.js
+    │   ├── News.js
+    │   └── Profile.js
     │   
-    └───components
-    │   │   Header.js
-    │   │   Nav.js
-    │   │   Footer.js
-    │   │   Login.js
+    └── components
+    │   │
+    │   ├── Header.js
+    │   ├── Nav.js
+    │   ├── Footer.js
+    │   └── Login.js
     │
-    └───assets
+    └── assets
         │
-        └───img
-        │   │   logo.svg
+        └── img
+        │   │
+        │   └── logo.svg
         │
-        └───scss
+        └── scss
             │
-            │   _base.scss
-            │   _header.scss
-            │   _nav.scss
-            │   _footer.scss
-            │   _main.scss
-            │   _news.scss
-            │   _newsArticle.scss
-            │   _profile.scss
-            │   _login.scss
-            │   app.scss
-            │   bootstrap.min.css
+            ├── _base.scss
+            ├── _header.scss
+            ├── _nav.scss
+            ├── _footer.scss
+            ├── _main.scss
+            ├── _news.scss
+            ├── _newsArticle.scss
+            ├── _profile.scss
+            ├── _login.scss
+            ├── app.scss
+            └── bootstrap.min.css
 ```
