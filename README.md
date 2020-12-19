@@ -18,6 +18,9 @@
 * **axios** для работы с сервером.
 * **eslint** для линтинга кода.
 * **eslint-config-airbnb** как конфиг линтера.
+
+## Использованные ресурсы
+
 * **bootstrap** для базовых стилей элементов.
 * **[placehold.it](https://placeholder.com/)** для заглушки изображений.
 * **[jsonplaceholder.typicode.com](http://jsonplaceholder.typicode.com/)** для имитации ответа сервера.
