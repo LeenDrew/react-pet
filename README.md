@@ -11,8 +11,8 @@
 * **eslint** для линтинга кода.
 * **eslint-config-airbnb** как конфиг линтера.
 * **bootstrap** для базовых стилей элементов.
-* **placehold.it** для заглушки изображений.
-* **jsonplaceholder.typicode.com** для имитации ответа сервера.
+* **[placehold.it]** для заглушки изображений.
+* **[jsonplaceholder.typicode.com]** для имитации ответа сервера.
 
 ## Структура проекта
 
