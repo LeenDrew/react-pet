@@ -33,9 +33,21 @@ project
 │   │   Login.js
 │
 └───assets
-│   │
-│   └───img
-│   │
-│   └───scss
-│
+    │
+    └───img
+    │   │   logo.svg
+    │
+    └───scss
+        │
+        │   _base.scss
+        │   _header.scss
+        │   _nav.scss
+        │   _footer.scss
+        │   _main.scss
+        │   _news.scss
+        │   _newsArticle.scss
+        │   _profile.scss
+        │   _login.scss
+        │   app.scss
+        │   bootstrap.min.css
 ```
