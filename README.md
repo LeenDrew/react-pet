@@ -17,37 +17,49 @@
 ## Структура проекта
 
 ```
-project
-│   README.md
+web-lab6-react
 │   index.js
+│   README.md
+│   package.json
+│   package-lock.json
+│   .eslintrc.json
+│   .gitignore
 │
-└───pages
-│   │   Main.js
-│   │   News.js
-│   │   Profile.js
-│   
-└───components
-│   │   Header.js
-│   │   Nav.js
-│   │   Footer.js
-│   │   Login.js
+└───public
+│   │
+│   │   index.html
+│   │   favicon.ico
+│   │   manifest.json
 │
-└───assets
+└───src
     │
-    └───img
-    │   │   logo.svg
+    └───pages
+    │   │   Main.js
+    │   │   News.js
+    │   │   Profile.js
+    │   
+    └───components
+    │   │   Header.js
+    │   │   Nav.js
+    │   │   Footer.js
+    │   │   Login.js
     │
-    └───scss
+    └───assets
         │
-        │   _base.scss
-        │   _header.scss
-        │   _nav.scss
-        │   _footer.scss
-        │   _main.scss
-        │   _news.scss
-        │   _newsArticle.scss
-        │   _profile.scss
-        │   _login.scss
-        │   app.scss
-        │   bootstrap.min.css
+        └───img
+        │   │   logo.svg
+        │
+        └───scss
+            │
+            │   _base.scss
+            │   _header.scss
+            │   _nav.scss
+            │   _footer.scss
+            │   _main.scss
+            │   _news.scss
+            │   _newsArticle.scss
+            │   _profile.scss
+            │   _login.scss
+            │   app.scss
+            │   bootstrap.min.css
 ```
