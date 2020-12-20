@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function NewsArticle(props) {
+function NewsCard(props) {
   const { imgAlt, title, bodyText } = props;
   return (
-    <div className="card news-article-card">
+    <div className="card news-card">
       <img src="https://placehold.it/300x150" className="card-img-top" alt={imgAlt} />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
@@ -15,10 +15,10 @@ function NewsArticle(props) {
   );
 }
 
-NewsArticle.propTypes = {
+NewsCard.propTypes = {
   imgAlt: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   bodyText: PropTypes.string.isRequired,
 };
 
-export default NewsArticle;
+export default NewsCard;

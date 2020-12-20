@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Main(props) {
+function Profile(props) {
   const { pageTitle } = props;
   return (
-    <div className="row main">
+    <div className="row profile">
       <div className="col-12">
         <h1 className="text-center page-title">
           {pageTitle}
@@ -14,8 +14,8 @@ function Main(props) {
   );
 }
 
-Main.propTypes = {
+Profile.propTypes = {
   pageTitle: PropTypes.string.isRequired,
 };
 
-export default Main;
+export default Profile;

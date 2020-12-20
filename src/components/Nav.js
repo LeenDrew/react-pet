@@ -1,10 +1,21 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Nav() {
   return (
     <nav className="nav">
-      <a href="./pages/Main" className="nav__link">Главная</a>
-      <a href="./pages/News" className="nav__link">Новости</a>
+      <NavLink
+        className="nav__link"
+        to="/"
+      >
+        Главная
+      </NavLink>
+      <NavLink
+        className="nav__link"
+        to="/news"
+      >
+        Новости
+      </NavLink>
     </nav>
   );
 }

@@ -52,7 +52,9 @@ web-lab6-react
     │   ├── Header.js
     │   ├── Nav.js
     │   ├── Footer.js
+    │   ├── NewsCard.js
     │   ├── Button.js
+    │   ├── PageTitle.js
     │   └── Login.js
     │
     └── assets
@@ -67,7 +69,7 @@ web-lab6-react
             ├── _footer.scss
             ├── _main.scss
             ├── _news.scss
-            ├── _newsArticle.scss
+            ├── _newsCard.scss
             ├── _profile.scss
             ├── _login.scss
             ├── app.scss

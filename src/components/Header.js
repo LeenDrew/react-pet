@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.svg';
 import Nav from './Nav';
 import Button from './Button';
@@ -15,12 +16,25 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container container">
-        <a href="/" className="logo-container">
-          <img src={logo} alt="" className="logo" />
-        </a>
+        <NavLink
+          className="logo-container"
+          to="/"
+        >
+          <img
+            src={logo}
+            alt="Реакт"
+            className="logo"
+          />
+        </NavLink>
         <Nav />
         <div className="profile-container">
-          <img src="https://placehold.it/50x50" alt="" className="profile-logo" />
+          <NavLink to="/profile">
+            <img
+              className="profile-logo"
+              src="https://placehold.it/50x50"
+              alt="Профиль"
+            />
+          </NavLink>
           {btn}
         </div>
       </div>
