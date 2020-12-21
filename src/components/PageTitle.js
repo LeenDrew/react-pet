@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function PageTitle(props) {
   const { pageTitle } = props;
   return (
-    <h1 className="text-center">
+    <h1 className="page-title text-center">
       {pageTitle}
     </h1>
   );

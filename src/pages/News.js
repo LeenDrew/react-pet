@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import PageTitle from '../components/PageTitle';
 import NewsCard from '../components/NewsCard';
 
 function News(props) {
-  const [newsArticleList, setNewsArticleList] = useState([]);
   const { pageTitle } = props;
+  const [newsArticleList, setNewsArticleList] = useState([]);
+
   useEffect(() => {
     axios.get('http://jsonplaceholder.typicode.com/posts?_limit=9')
       .then((response) => setNewsArticleList(response.data));
@@ -14,16 +16,17 @@ function News(props) {
   return (
     <div className="row news">
       <div className="col-12">
-        <h1 className="text-center page-title">
-          {pageTitle}
-        </h1>
+        <PageTitle pageTitle={pageTitle} />
       </div>
       {newsArticleList.map((newsArticleItem) => (
-        <div className="col-lg-4 col-xs-12 col-sm-6 my-col">
+        <div
+          className="col-lg-4 col-xs-12 col-sm-6 my-col"
+          key={newsArticleItem.id}
+        >
           <NewsCard
-            key={newsArticleItem.id}
             title={newsArticleItem.title}
             bodyText={newsArticleItem.body}
+            imgAlt="Заглушка"
           />
         </div>
       ))}

@@ -47,15 +47,14 @@ web-lab6-react
     │   ├── Main.js
     │   ├── News.js
     │   └── Profile.js
+    │   └── Login.js
     │
     ├── components
     │   ├── Header.js
     │   ├── Nav.js
     │   ├── Footer.js
     │   ├── NewsCard.js
-    │   ├── Button.js
-    │   ├── PageTitle.js
-    │   └── Login.js
+    │   └── PageTitle.js
     │
     └── assets
         │

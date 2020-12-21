@@ -2,16 +2,9 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.svg';
 import Nav from './Nav';
-import Button from './Button';
 
 function Header() {
   const isLoginned = useState(false);
-  let btn = useState();
-  if (isLoginned) {
-    btn = <Button classes="btn-login btn btn-primary" text="Войти" />;
-  } else {
-    btn = <Button classes="btn-logout btn btn-danger" text="Выйти" />;
-  }
 
   return (
     <header className="header">
@@ -35,7 +28,9 @@ function Header() {
               alt="Профиль"
             />
           </NavLink>
-          {btn}
+          {isLoginned
+            ? <NavLink to="/login" type="button" className="btn-login btn btn-primary">Войти</NavLink>
+            : <button type="button" className="btn-logout btn btn-danger">Выйти</button>}
         </div>
       </div>
     </header>
