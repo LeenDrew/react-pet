@@ -91,7 +91,6 @@ web-lab6-react
             ├── _main.scss
             ├── _news.scss
             ├── _newsCard.scss
-            ├── _profile.scss
             ├── _login.scss
             ├── app.scss
             └── bootstrap.min.css
