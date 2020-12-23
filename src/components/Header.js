@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.svg';
 import Nav from './Nav';
 
-function Header() {
-  const isLoginned = useState(false);
+function Header(props) {
+  const { isLoginned } = props;
+
+  const logout = () => {
+    localStorage.setItem('isLoginned', false);
+  };
 
   return (
     <header className="header">
@@ -29,12 +34,16 @@ function Header() {
             />
           </NavLink>
           {isLoginned
-            ? <NavLink to="/login" type="button" className="btn-login btn btn-primary">Войти</NavLink>
-            : <button type="button" className="btn-logout btn btn-danger">Выйти</button>}
+            ? <button type="button" className="btn-logout btn btn-danger" onClick={logout}>Выйти</button>
+            : <NavLink to="/login" type="button" className="btn-login btn btn-primary">Войти</NavLink>}
         </div>
       </div>
     </header>
   );
 }
+
+Header.propTypes = {
+  isLoginned: PropTypes.bool.isRequired,
+};
 
 export default Header;

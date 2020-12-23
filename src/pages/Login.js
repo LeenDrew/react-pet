@@ -5,16 +5,14 @@ import PageTitle from '../components/PageTitle';
 
 function Login(props) {
   const { pageTitle } = props;
-  const [username, setUserName] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const submitLogin = () => {
-    if (true) {
-      setUserName(username);
-      setPassword(password);
-      console.log(username, password);
+    if (username === 'admin' && password === '12345') {
+      localStorage.setItem('isLoginned', true);
     } else {
-      console.log('123');
+      alert('username: admin, pass: 12345');
     }
   };
 
@@ -25,14 +23,42 @@ function Login(props) {
       </div>
       <form className="login__form">
         <div className="mb-3">
-          <label htmlFor="inputUsername" className="form-label">Логин</label>
-          <input type="text" className="form-control" id="inputUsername" />
+          <label
+            htmlFor="inputUsername"
+            className="form-label"
+          >
+            Логин
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="inputUsername"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
         <div className="mb-3">
-          <label htmlFor="inputPassword" className="form-label">Пароль</label>
-          <input type="password" className="form-control" id="inputPassword" />
+          <label
+            htmlFor="inputPassword"
+            className="form-label"
+          >
+            Пароль
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="inputPassword"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
-        <button type="button" className="btn btn-primary" onClick={submitLogin}>Войти</button>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={submitLogin}
+        >
+          Войти
+        </button>
       </form>
     </div>
   );

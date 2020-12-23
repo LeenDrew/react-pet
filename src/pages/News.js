@@ -6,6 +6,7 @@ import NewsCard from '../components/NewsCard';
 
 function News(props) {
   const { pageTitle } = props;
+
   const [newsArticleList, setNewsArticleList] = useState([]);
 
   useEffect(() => {

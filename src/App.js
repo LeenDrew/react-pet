@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line object-curly-newline
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './assets/scss/bootstrap.min.css';
@@ -11,11 +12,18 @@ import Login from './pages/Login';
 import Footer from './components/Footer';
 
 function App() {
-  const isLoginned = useState(false);
+  const parseBool = (value) => {
+    if (value === 'true') {
+      return true;
+    }
+    return false;
+  };
+
+  const [isLoginned] = useState(parseBool(localStorage.getItem('isLoginned')));
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header isLoginned={isLoginned} />
       <div className="main-container container">
         <Switch>
           <Route
