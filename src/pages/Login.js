@@ -11,6 +11,7 @@ function Login(props) {
   const submitLogin = () => {
     if (username === 'admin' && password === '12345') {
       localStorage.setItem('isLoginned', true);
+      alert('Вы авторизованы. Перезагрузите страницу');
     } else {
       alert('username: admin, pass: 12345');
     }

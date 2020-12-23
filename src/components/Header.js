@@ -9,6 +9,7 @@ function Header(props) {
 
   const logout = () => {
     localStorage.setItem('isLoginned', false);
+    alert('Вы вышли. Перезагрузите страницу');
   };
 
   return (
