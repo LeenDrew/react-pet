@@ -24,10 +24,7 @@ function Login(props) {
       </div>
       <form className="login__form">
         <div className="mb-3">
-          <label
-            htmlFor="inputUsername"
-            className="form-label"
-          >
+          <label htmlFor="inputUsername" className="form-label">
             Логин
           </label>
           <input
@@ -39,10 +36,7 @@ function Login(props) {
           />
         </div>
         <div className="mb-3">
-          <label
-            htmlFor="inputPassword"
-            className="form-label"
-          >
+          <label htmlFor="inputPassword" className="form-label">
             Пароль
           </label>
           <input
@@ -53,11 +47,7 @@ function Login(props) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={submitLogin}
-        >
+        <button type="button" className="btn btn-primary" onClick={submitLogin}>
           Войти
         </button>
       </form>

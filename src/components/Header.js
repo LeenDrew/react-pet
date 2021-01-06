@@ -15,28 +15,23 @@ function Header(props) {
   return (
     <header className="header">
       <div className="header__container container">
-        <NavLink
-          className="logo-container"
-          to="/"
-        >
-          <img
-            src={logo}
-            alt="Реакт"
-            className="logo"
-          />
+        <NavLink className="logo-container" to="/">
+          <img src={logo} alt="Реакт" className="logo" />
         </NavLink>
         <Nav />
         <div className="profile-container">
           <NavLink to="/profile">
-            <img
-              className="profile-logo"
-              src="https://placehold.it/50x50"
-              alt="Профиль"
-            />
+            <img className="profile-logo" src="https://placehold.it/50x50" alt="Профиль" />
           </NavLink>
-          {isLoginned
-            ? <button type="button" className="btn-logout btn btn-danger" onClick={logout}>Выйти</button>
-            : <NavLink to="/login" type="button" className="btn-login btn btn-primary">Войти</NavLink>}
+          {isLoginned ? (
+            <button type="button" className="btn-logout btn btn-danger" onClick={logout}>
+              Выйти
+            </button>
+          ) : (
+            <NavLink to="/login" type="button" className="btn-login btn btn-primary">
+              Войти
+            </NavLink>
+          )}
         </div>
       </div>
     </header>

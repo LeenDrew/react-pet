@@ -1,6 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
-// eslint-disable-next-line object-curly-newline
+import React, { useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './assets/scss/bootstrap.min.css';
 import './assets/scss/app.scss';
@@ -26,23 +24,13 @@ function App() {
       <Header isLoginned={isLoginned} />
       <div className="main-container container">
         <Switch>
-          <Route
-            path="/"
-            exact
-            render={() => <Main pageTitle="Главная" />}
-          />
-          <Route
-            path="/news"
-            render={() => <News pageTitle="Новости" />}
-          />
+          <Route path="/" exact render={() => <Main pageTitle="Главная" />} />
+          <Route path="/news" render={() => <News pageTitle="Новости" />} />
           <Route
             path="/profile"
             render={() => (isLoginned ? <Profile pageTitle="Профиль" /> : <Redirect to="/login" />)}
           />
-          <Route
-            path="/login"
-            render={() => <Login pageTitle="Вход" />}
-          />
+          <Route path="/login" render={() => <Login pageTitle="Вход" />} />
         </Switch>
       </div>
       <Footer />

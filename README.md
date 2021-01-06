@@ -70,8 +70,12 @@ web-lab6-react
     ├── pages
     │   ├── Main.js
     │   ├── News.js
-    │   └── Profile.js
+    │   ├── Profile.js
     │   └── Login.js
+    │
+    ├── store
+    │   ├── Store.js
+    │   └── .js
     │
     ├── components
     │   ├── Header.js

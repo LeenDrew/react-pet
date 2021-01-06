@@ -10,7 +10,8 @@ function News(props) {
   const [newsArticleList, setNewsArticleList] = useState([]);
 
   useEffect(() => {
-    axios.get('http://jsonplaceholder.typicode.com/posts?_limit=9')
+    axios
+      .get('http://jsonplaceholder.typicode.com/posts?_limit=9')
       .then((response) => setNewsArticleList(response.data));
   }, []);
 
@@ -19,18 +20,16 @@ function News(props) {
       <div className="col-12">
         <PageTitle pageTitle={pageTitle} />
       </div>
-      {newsArticleList.map((newsArticleItem) => (
-        <div
-          className="col-lg-4 col-xs-12 col-sm-6 my-col"
-          key={newsArticleItem.id}
-        >
-          <NewsCard
-            title={newsArticleItem.title}
-            bodyText={newsArticleItem.body}
-            imgAlt="Заглушка"
-          />
-        </div>
-      ))}
+      {newsArticleList &&
+        newsArticleList.map((newsArticleItem) => (
+          <div className="col-lg-4 col-xs-12 col-sm-6 my-col" key={newsArticleItem.id}>
+            <NewsCard
+              title={newsArticleItem.title}
+              bodyText={newsArticleItem.body}
+              imgAlt="Заглушка"
+            />
+          </div>
+        ))}
     </div>
   );
 }
