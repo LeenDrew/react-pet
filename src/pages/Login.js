@@ -9,6 +9,8 @@ function Login({ pageTitle, login }) {
 
   const submitLogin = () => {
     if (username === 'admin' && password === '12345') {
+      setUsername('');
+      setPassword('');
       login();
     } else {
       alert('username: admin, pass: 12345');
