@@ -4,14 +4,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.svg';
 import Nav from './Nav';
 
-function Header(props) {
-  const { isLoginned } = props;
-
-  const logout = () => {
-    localStorage.setItem('isLoginned', false);
-    alert('Вы вышли. Перезагрузите страницу');
-  };
-
+function Header({ isLoginned, logout }) {
   return (
     <header className="header">
       <div className="header__container container">
@@ -28,7 +21,7 @@ function Header(props) {
               Выйти
             </button>
           ) : (
-            <NavLink to="/login" type="button" className="btn-login btn btn-primary">
+            <NavLink to="/login" className="btn-login btn btn-primary">
               Войти
             </NavLink>
           )}
@@ -40,6 +33,7 @@ function Header(props) {
 
 Header.propTypes = {
   isLoginned: PropTypes.bool.isRequired,
+  logout: PropTypes.func.isRequired,
 };
 
 export default Header;

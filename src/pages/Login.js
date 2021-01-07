@@ -3,15 +3,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import PageTitle from '../components/PageTitle';
 
-function Login(props) {
-  const { pageTitle } = props;
+function Login({ pageTitle, login }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const submitLogin = () => {
     if (username === 'admin' && password === '12345') {
-      localStorage.setItem('isLoginned', true);
-      alert('Вы авторизованы. Перезагрузите страницу');
+      login();
     } else {
       alert('username: admin, pass: 12345');
     }
@@ -57,6 +55,7 @@ function Login(props) {
 
 Login.propTypes = {
   pageTitle: PropTypes.string.isRequired,
+  login: PropTypes.func.isRequired,
 };
 
 export default Login;

@@ -17,11 +17,21 @@ function App() {
     return false;
   };
 
-  const [isLoginned] = useState(parseBool(localStorage.getItem('isLoginned')));
+  const [isLoginned, setIsLoginned] = useState(parseBool(localStorage.getItem('isLoginned')));
+
+  const login = () => {
+    localStorage.setItem('isLoginned', 'true');
+    setIsLoginned(true);
+  };
+
+  const logout = () => {
+    localStorage.setItem('isLoginned', 'false');
+    setIsLoginned(false);
+  };
 
   return (
     <BrowserRouter>
-      <Header isLoginned={isLoginned} />
+      <Header isLoginned={isLoginned} logout={logout} />
       <div className="main-container container">
         <Switch>
           <Route path="/" exact render={() => <Main pageTitle="Главная" />} />
@@ -30,7 +40,7 @@ function App() {
             path="/profile"
             render={() => (isLoginned ? <Profile pageTitle="Профиль" /> : <Redirect to="/login" />)}
           />
-          <Route path="/login" render={() => <Login pageTitle="Вход" />} />
+          <Route path="/login" render={() => <Login pageTitle="Вход" login={login} />} />
         </Switch>
       </div>
       <Footer />
