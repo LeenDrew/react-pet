@@ -6,9 +6,11 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "airbnb",
     "airbnb/hooks",
-    "prettier"
+    "prettier",
+    "prettier/react"
   ],
   "plugins": ["react"],
   "parser": "babel-eslint",

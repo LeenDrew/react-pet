@@ -29,7 +29,13 @@ function App() {
           />
           <Route
             path="/login"
-            render={() => <Login pageTitle="Вход" changeIsLoginned={changeIsLoginned} />}
+            render={() =>
+              !isLoginned ? (
+                <Login pageTitle="Вход" changeIsLoginned={changeIsLoginned} />
+              ) : (
+                <Redirect to="/profile" />
+              )
+            }
           />
         </Switch>
       </div>

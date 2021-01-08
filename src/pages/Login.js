@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import PageTitle from '../components/PageTitle';
@@ -26,26 +25,26 @@ function Login({ pageTitle, changeIsLoginned }) {
         <div className="mb-3">
           <label htmlFor="inputUsername" className="form-label">
             Логин
+            <input
+              type="text"
+              className="form-control"
+              id="inputUsername"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputUsername"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
         </div>
         <div className="mb-3">
           <label htmlFor="inputPassword" className="form-label">
             Пароль
+            <input
+              type="password"
+              className="form-control"
+              id="inputPassword"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </label>
-          <input
-            type="password"
-            className="form-control"
-            id="inputPassword"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
         </div>
         <button type="button" className="btn btn-primary" onClick={submitLogin}>
           Войти
