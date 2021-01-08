@@ -10,28 +10,16 @@ import Login from './pages/Login';
 import Footer from './components/Footer';
 
 function App() {
-  const parseBool = (value) => {
-    if (value === 'true') {
-      return true;
-    }
-    return false;
-  };
+  const [isLoginned, setIsLoginned] = useState(JSON.parse(localStorage.getItem('isLoginned')));
 
-  const [isLoginned, setIsLoginned] = useState(parseBool(localStorage.getItem('isLoginned')));
-
-  const login = () => {
-    localStorage.setItem('isLoginned', 'true');
-    setIsLoginned(true);
-  };
-
-  const logout = () => {
-    localStorage.setItem('isLoginned', 'false');
-    setIsLoginned(false);
+  const changeIsLoginned = (value) => {
+    localStorage.setItem('isLoginned', JSON.stringify(value));
+    setIsLoginned(value);
   };
 
   return (
     <BrowserRouter>
-      <Header isLoginned={isLoginned} logout={logout} />
+      <Header isLoginned={isLoginned} changeIsLoginned={changeIsLoginned} />
       <div className="main-container container">
         <Switch>
           <Route path="/" exact render={() => <Main pageTitle="Главная" />} />
@@ -40,7 +28,10 @@ function App() {
             path="/profile"
             render={() => (isLoginned ? <Profile pageTitle="Профиль" /> : <Redirect to="/login" />)}
           />
-          <Route path="/login" render={() => <Login pageTitle="Вход" login={login} />} />
+          <Route
+            path="/login"
+            render={() => <Login pageTitle="Вход" changeIsLoginned={changeIsLoginned} />}
+          />
         </Switch>
       </div>
       <Footer />

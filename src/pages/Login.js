@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import PageTitle from '../components/PageTitle';
 
-function Login({ pageTitle, login }) {
+function Login({ pageTitle, changeIsLoginned }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -11,7 +11,7 @@ function Login({ pageTitle, login }) {
     if (username === 'admin' && password === '12345') {
       setUsername('');
       setPassword('');
-      login();
+      changeIsLoginned(true);
     } else {
       alert('username: admin, pass: 12345');
     }
@@ -57,7 +57,7 @@ function Login({ pageTitle, login }) {
 
 Login.propTypes = {
   pageTitle: PropTypes.string.isRequired,
-  login: PropTypes.func.isRequired,
+  changeIsLoginned: PropTypes.func.isRequired,
 };
 
 export default Login;

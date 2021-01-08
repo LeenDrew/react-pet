@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.svg';
 import Nav from './Nav';
 
-function Header({ isLoginned, logout }) {
+function Header({ isLoginned, changeIsLoginned }) {
   return (
     <header className="header">
       <div className="header__container container">
@@ -17,7 +17,11 @@ function Header({ isLoginned, logout }) {
             <img className="profile-logo" src="https://placehold.it/50x50" alt="Профиль" />
           </NavLink>
           {isLoginned ? (
-            <button type="button" className="btn-logout btn btn-danger" onClick={logout}>
+            <button
+              type="button"
+              className="btn-logout btn btn-danger"
+              onClick={() => changeIsLoginned(false)}
+            >
               Выйти
             </button>
           ) : (
@@ -33,7 +37,7 @@ function Header({ isLoginned, logout }) {
 
 Header.propTypes = {
   isLoginned: PropTypes.bool.isRequired,
-  logout: PropTypes.func.isRequired,
+  changeIsLoginned: PropTypes.func.isRequired,
 };
 
 export default Header;
