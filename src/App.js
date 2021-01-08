@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import './assets/scss/bootstrap.min.css';
 import './assets/scss/app.scss';
 import Header from './components/Header';
 import Main from './pages/Main';
