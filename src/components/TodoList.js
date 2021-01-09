@@ -81,12 +81,7 @@ function TodoList() {
           ))}
       </div>
       {!todoList.length && (
-        <Alert
-          style={{ marginTop: '1rem' }}
-          type="warning"
-          text="Заметок нет"
-          hasCloseButton={false}
-        />
+        <Alert style={{ marginTop: '1rem' }} type="warning" text="Заметок нет" />
       )}
     </div>
   );

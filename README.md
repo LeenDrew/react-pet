@@ -42,6 +42,11 @@
 - Редирект на страницу "Profile" при успешной авторизации.
 - Логаут при нажатии на кнопку "Выйти" в шапке.
 - Получение списка новостей с REST API сервиса и вывод их на странице "News".
+- TODO лист:
+  - Добавление задач.
+  - Удаление задач.
+  - Пометка выполнения задач.
+  - Хранение задач в localStore.
 
 ## Файловая структура проекта
 
@@ -51,8 +56,9 @@ web-lab6-react
 ├── App.js
 ├── README.md
 ├── package.json
-├── package-lock.json
+├── yarn.lock
 ├── .eslintrc
+├── .prettierrc
 ├── .gitignore
 │
 ├── public
@@ -68,21 +74,15 @@ web-lab6-react
     │   ├── Profile.js
     │   └── Login.js
     │
-    ├── store
-    │   ├── store.js
-    │   │
-    │   ├── actions
-    │   │   └──
-    │   │
-    │   └── reducers
-    │       └──
-    │
     ├── components
     │   ├── Header.js
     │   ├── Nav.js
     │   ├── Footer.js
     │   ├── NewsCard.js
-    │   └── PageTitle.js
+    │   ├── PageTitle.js
+    │   ├── TodoList.js
+    │   ├── TodoItem.js
+    │   └── Alert.js
     │
     └── assets
         │
@@ -90,14 +90,13 @@ web-lab6-react
         │   └── logo.svg
         │
         └── scss
+            ├── app.scss
             ├── _base.scss
             ├── _header.scss
             ├── _nav.scss
             ├── _footer.scss
-            ├── _main.scss
             ├── _news.scss
             ├── _newsCard.scss
             ├── _login.scss
-            ├── app.scss
-            └── bootstrap.min.css
+            └── _todoList.scss
 ```
