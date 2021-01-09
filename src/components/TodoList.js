@@ -45,7 +45,7 @@ function TodoList() {
       {isAlertVisible && (
         <Alert
           type="success"
-          text="Заметка была добавлена"
+          text="Задача была добавлена"
           hasCloseButton
           changeAlertVisibility={changeAlertVisibility}
         />
@@ -80,9 +80,7 @@ function TodoList() {
             />
           ))}
       </div>
-      {!todoList.length && (
-        <Alert style={{ marginTop: '1rem' }} type="warning" text="Заметок нет" />
-      )}
+      {!todoList.length && <Alert style={{ marginTop: '1rem' }} type="warning" text="Задач нет" />}
     </div>
   );
 }
