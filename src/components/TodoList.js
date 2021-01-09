@@ -45,7 +45,7 @@ function TodoList() {
       {isAlertVisible && (
         <Alert
           type="success"
-          text="Задача была добавлена"
+          text="Задача была добавлена."
           hasCloseButton
           changeAlertVisibility={changeAlertVisibility}
         />
@@ -61,6 +61,7 @@ function TodoList() {
           <input
             type="text"
             className="form-control"
+            placeholder="Введите задачу..."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />
@@ -80,7 +81,9 @@ function TodoList() {
             />
           ))}
       </div>
-      {!todoList.length && <Alert style={{ marginTop: '1rem' }} type="warning" text="Задач нет" />}
+      {!todoList.length && (
+        <Alert style={{ marginTop: '1rem' }} type="warning" text="Задач пока нет." />
+      )}
     </div>
   );
 }
