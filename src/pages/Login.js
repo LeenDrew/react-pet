@@ -1,27 +1,32 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import PageTitle from '../components/PageTitle';
+import Alert from '../components/Alert';
 
 function Login({ pageTitle, changeIsLoginned }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isAlertVisible, setIsAlertVisible] = useState(false);
 
-  const submitLogin = () => {
+  function submitLogin(e) {
+    e.preventDefault();
     if (username === 'admin' && password === '12345') {
+      changeIsLoginned(true);
       setUsername('');
       setPassword('');
-      changeIsLoginned(true);
+      setIsAlertVisible(false);
     } else {
-      alert('username: admin, pass: 12345');
+      setIsAlertVisible(true);
     }
-  };
+  }
 
   return (
     <div className="row login">
       <div className="col-12">
         <PageTitle pageTitle={pageTitle} />
       </div>
-      <form className="login__form">
+      <form className="login__form" onSubmit={(e) => submitLogin(e)}>
+        {isAlertVisible && <Alert text="Логин: admin, пароль: 12345" />}
         <div className="mb-3">
           <label htmlFor="inputUsername" className="form-label">
             Логин
@@ -46,7 +51,7 @@ function Login({ pageTitle, changeIsLoginned }) {
             />
           </label>
         </div>
-        <button type="button" className="btn btn-primary" onClick={submitLogin}>
+        <button type="submit" className="btn btn-primary">
           Войти
         </button>
       </form>
