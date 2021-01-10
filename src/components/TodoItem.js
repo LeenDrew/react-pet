@@ -15,9 +15,9 @@ function TodoItem({ todoItem, removeTodo, toggleCompletedTodo }) {
         {todoItem.title}
       </span>
       <button
-        type="submit"
+        type="button"
         className="close"
-        aria-label="Close"
+        aria-label="close"
         onClick={() => removeTodo(todoItem.id)}
       >
         &times;
