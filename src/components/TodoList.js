@@ -75,6 +75,7 @@ function TodoList() {
         {!!todoList.length &&
           todoList.map((todoItem) => (
             <TodoItem
+              key={todoItem.id}
               todoItem={todoItem}
               removeTodo={removeTodo}
               toggleCompletedTodo={toggleCompletedTodo}
