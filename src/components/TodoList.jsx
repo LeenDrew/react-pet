@@ -7,21 +7,21 @@ function TodoList() {
   const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('todoList')));
   const [isAlertVisible, setIsAlertVisible] = useState(false);
 
-  function changeAlertVisibility(value) {
+  const changeAlertVisibility = (value) => {
     setIsAlertVisible(value);
-  }
+  };
 
-  function addTodo(value) {
+  const addTodo = (value) => {
     if (inputValue.trim().length) {
       setTodoList(todoList.concat([{ id: Date.now(), title: value, completed: false }]));
       changeAlertVisibility(true);
     }
     setInputValue('');
-  }
+  };
 
-  function removeTodo(id) {
+  const removeTodo = (id) => {
     setTodoList(todoList.filter((item) => item.id !== id));
-  }
+  };
 
   function toggleCompletedTodo(id) {
     setTodoList(

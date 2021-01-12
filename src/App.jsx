@@ -25,15 +25,11 @@ function App() {
           <Route path="/news" render={() => <News pageTitle="Новости" />} />
           <Route
             path="/profile"
-            component={() =>
-              isLoginned ? <Profile pageTitle="Профиль" /> : <Redirect to="/login" />
-            }
-            // render={() => (isLoginned ? <Profile pageTitle="Профиль" /> : <Redirect to="/login" />)}
+            render={() => (isLoginned ? <Profile pageTitle="Профиль" /> : <Redirect to="/login" />)}
           />
           <Route
             path="/login"
-            // render={() => (!isLoginned ? <Login pageTitle="Вход" changeIsLoginned={changeIsLoginned} /> : <Redirect to="/profile" />)}
-            component={() =>
+            render={() =>
               !isLoginned ? (
                 <Login pageTitle="Вход" changeIsLoginned={changeIsLoginned} />
               ) : (
