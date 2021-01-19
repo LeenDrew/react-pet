@@ -4,9 +4,7 @@ import axios from 'axios';
 import PageTitle from '../components/PageTitle';
 import NewsCard from '../components/NewsCard';
 
-function News(props) {
-  const { pageTitle } = props;
-
+function News({ pageTitle }) {
   const [newsArticleList, setNewsArticleList] = useState([]);
 
   useEffect(() => {

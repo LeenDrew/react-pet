@@ -1,5 +1,9 @@
 # SPA React-приложение
 
+## Демо
+
+Посмотреть работающую версию приложения можно по **[ссылке](https://practical-pare-fc7514.netlify.app/)**
+
 ## Установка
 
 - Проверить, установлены ли:
@@ -7,7 +11,7 @@
   - **npm**, введя в терминале **npm -v**. Если в терминале не появилась версия, установить глобально, введя в терминале **npm i npm@latest -g**
 - Склонировать репозиторий, введя в терминале **git clone https://github.com/LeenDrew/react-pet.git**
 - Установить зависимости, введя в терминале **npm i** или **yarn install** (если установлен)
-- Запустить, введя в терминате **npm run start** или **yarn run start** (если установлен)
+- Запустить, введя в терминате **npm run start** или **yarn start** (если установлен)
 
 ## Зависимости
 
@@ -27,6 +31,7 @@
 - **[bootstrap](https://getbootstrap.com)** для базовых стилей элементов.
 - **[placehold.it](https://placeholder.com)** для заглушки изображений.
 - **[jsonplaceholder.typicode.com](http://jsonplaceholder.typicode.com)** для имитации ответа сервера.
+- **[Netlify](https://www.netlify.com/)** для хостинга.
 
 ## Что реализовано
 
