@@ -9,7 +9,7 @@ function News({ pageTitle }) {
 
   useEffect(() => {
     axios
-      .get('http://jsonplaceholder.typicode.com/posts?_limit=9')
+      .get('https://jsonplaceholder.typicode.com/posts?_limit=9')
       .then((response) => setNewsArticleList(response.data));
   }, []);
 
