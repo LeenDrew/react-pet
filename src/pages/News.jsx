@@ -11,6 +11,9 @@ function News({ pageTitle }) {
     axios
       .get('https://jsonplaceholder.typicode.com/posts?_limit=9')
       .then((response) => setNewsArticleList(response.data));
+    axios
+      .get('https://rasp.omgtu.ru/api/schedule/group/513?start=2021.02.08&finish=2021.02.14&lng=1')
+      .then((response) => console.log(response));
   }, []);
 
   return (
