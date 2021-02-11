@@ -13,6 +13,7 @@ function News({ pageTitle }) {
       .then((response) => setNewsArticleList(response.data));
     axios
       .get('https://rasp.omgtu.ru/api/schedule/group/513?start=2021.02.08&finish=2021.02.14&lng=1')
+      // eslint-disable-next-line no-console
       .then((response) => console.log(response.data));
   }, []);
 
