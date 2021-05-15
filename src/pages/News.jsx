@@ -7,10 +7,24 @@ import NewsCard from '../components/NewsCard';
 function News({ pageTitle }) {
   const [newsArticleList, setNewsArticleList] = useState([]);
 
+  const fetchNews = async () => {
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=9');
+      setNewsArticleList(response.data);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
-    axios
-      .get('https://jsonplaceholder.typicode.com/posts?_limit=9')
-      .then((response) => setNewsArticleList(response.data));
+    fetchNews();
+    // axios
+    //   .get(
+    //     'https://cors-anywhere.herokuapp.com/https://rasp.omgtu.ru/api/schedule/group/513?start=2021.02.08&finish=2021.02.14&lng=1',
+    //   )
+    //   // eslint-disable-next-line no-console
+    //   .then((response) => console.log(response.data));
   }, []);
 
   return (
