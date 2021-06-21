@@ -1,10 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/img/logo.svg';
-import Nav from './Nav';
+import { logoutAction } from '../../store/actions/loginActions';
+import logo from '../../assets/img/logo.svg';
+import { RootState } from '../../store/store';
+import Nav from '../nav/Nav';
+import './Header.scss';
 
-function Header({ isLoginned, changeIsLoginned }) {
+export default function Header(): React.ReactElement {
+  const dispatch = useDispatch();
+  const isLoginned = useSelector((state: RootState) => state.loginReducer.isLoginned);
+
   return (
     <header className="header">
       <div className="header__container container">
@@ -14,13 +20,13 @@ function Header({ isLoginned, changeIsLoginned }) {
         <Nav />
         <div className="profile-container">
           <NavLink to="/profile">
-            <img className="profile-logo" src="https://placehold.it/50x50" alt="Профиль" />
+            <img className="profile-logo" src="https://picsum.photos/50" alt="Профиль" />
           </NavLink>
           {isLoginned ? (
             <button
               type="button"
               className="btn-logout btn btn-danger"
-              onClick={() => changeIsLoginned(false)}
+              onClick={() => dispatch(logoutAction())}
             >
               Выйти
             </button>
@@ -34,10 +40,3 @@ function Header({ isLoginned, changeIsLoginned }) {
     </header>
   );
 }
-
-Header.propTypes = {
-  isLoginned: PropTypes.bool.isRequired,
-  changeIsLoginned: PropTypes.func.isRequired,
-};
-
-export default Header;

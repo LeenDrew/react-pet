@@ -1,32 +1,37 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import PageTitle from '../components/PageTitle';
-import Alert from '../components/Alert';
+import React, { FormEvent, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginAction } from '../../store/actions/loginActions';
+import Alert from '../../components/alert/Alert';
+import './Login.scss';
 
-function Login({ pageTitle, changeIsLoginned }) {
+export default function Login(): React.ReactElement {
+  const dispatch = useDispatch();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isAlertVisible, setIsAlertVisible] = useState(false);
+  const [isAlertVisible, setIsAlertVisible] = useState(false as boolean);
 
-  function submitLogin(e) {
+  const submitLoginHandler = (e: FormEvent) => {
     e.preventDefault();
     if (username === 'admin' && password === '12345') {
-      changeIsLoginned(true);
+      dispatch(loginAction());
       setUsername('');
       setPassword('');
       setIsAlertVisible(false);
     } else {
       setIsAlertVisible(true);
     }
-  }
+  };
 
   return (
     <div className="row login">
       <div className="col-12">
-        <PageTitle pageTitle={pageTitle} />
+        <h1 className="page-title text-center">Логин</h1>
       </div>
-      <form className="login__form" onSubmit={(e) => submitLogin(e)}>
-        {isAlertVisible && <Alert text="Логин: admin, пароль: 12345" />}
+      <form className="login__form" onSubmit={(e) => submitLoginHandler(e)}>
+        {isAlertVisible && (
+          <Alert type="warning" text="Логин: admin, пароль: 12345" hasCloseButton={false} />
+        )}
         <div className="mb-3">
           <label htmlFor="inputUsername" className="form-label">
             Логин
@@ -58,10 +63,3 @@ function Login({ pageTitle, changeIsLoginned }) {
     </div>
   );
 }
-
-Login.propTypes = {
-  pageTitle: PropTypes.string.isRequired,
-  changeIsLoginned: PropTypes.func.isRequired,
-};
-
-export default Login;

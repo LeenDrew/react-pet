@@ -1,16 +1,13 @@
 import React from 'react';
+import './footer.scss';
 
-function Footer() {
+export default function Footer(): React.ReactElement {
   return (
     <footer className="footer">
       <div className="footer__container container">
         <div className="about-author-container">
           <span className="author">LeenDrew</span>
-          <a
-            href="https://github.com/LeenDrew/web-lab6-react"
-            target="blank"
-            className="repository"
-          >
+          <a href="https://github.com/LeenDrew/react-pet" target="blank" className="repository">
             Repository
           </a>
         </div>
@@ -18,5 +15,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

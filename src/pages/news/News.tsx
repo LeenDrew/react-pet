@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
-import PageTitle from '../components/PageTitle';
-import NewsCard from '../components/NewsCard';
+import NewsCard from '../../components/newsCard/NewsCard';
+import './News.scss';
 
-function News({ pageTitle }) {
+type NewsArticleItem = {
+  id: number;
+  title: string;
+  body: string;
+};
+
+export default function News(): React.ReactElement {
   const [newsArticleList, setNewsArticleList] = useState([]);
 
-  const fetchNews = async () => {
+  const fetchNews: () => void = async () => {
     try {
       const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=9');
       setNewsArticleList(response.data);
     } catch (e) {
-      // eslint-disable-next-line no-console
       console.log(e);
     }
   };
@@ -30,10 +34,10 @@ function News({ pageTitle }) {
   return (
     <div className="row news">
       <div className="col-12">
-        <PageTitle pageTitle={pageTitle} />
+        <h1 className="page-title text-center">Новости</h1>
       </div>
-      {newsArticleList &&
-        newsArticleList.map((newsArticleItem) => (
+      {!!newsArticleList.length &&
+        newsArticleList.map((newsArticleItem: NewsArticleItem) => (
           <div className="col-lg-4 col-xs-12 col-sm-6 my-col" key={newsArticleItem.id}>
             <NewsCard
               title={newsArticleItem.title}
@@ -45,9 +49,3 @@ function News({ pageTitle }) {
     </div>
   );
 }
-
-News.propTypes = {
-  pageTitle: PropTypes.string.isRequired,
-};
-
-export default News;

@@ -16,11 +16,11 @@
 ## Зависимости
 
 - **create-react-app** как базовый шаблон react-приложения.
-- **prop-types** для типизации пропсов.
+- ~~**typescript** для статической типизации.~~
 - **react-router-dom** для роутинга страниц.
 - **node-sass** для компиляции scss стилей.
 - **axios** для работы с сервером.
-- ~~**redux** для хранения глобального состояния.~~
+- ~~**redux** как глобальное хранилище.~~
 - ~~**redux-thunk** для асинхронных action'ов.~~
 - **prettier** для форматирования кода.
 - **eslint** для линтинга кода.
@@ -28,8 +28,8 @@
 
 ## Использованные ресурсы
 
-- **[bootstrap](https://getbootstrap.com)** для базовых стилей элементов.
-- **[placehold.it](https://placeholder.com)** для заглушки изображений.
+- **[bootstrap](https://getbootstrap.com)** для базовых стилей.
+- **[picsum.photos](https://picsum.photos)** для заглушки изображений.
 - **[jsonplaceholder.typicode.com](http://jsonplaceholder.typicode.com)** для имитации ответа сервера.
 - **[Netlify](https://www.netlify.com/)** для хостинга.
 

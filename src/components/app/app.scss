@@ -1,3 +1,5 @@
+@import '~bootstrap/scss/bootstrap';
+
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +30,7 @@ ul {
 body {
   background: linear-gradient(45deg, #5d66b3, #23a6d5, #23d5ab, #28af70);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 15s ease-in-out infinite;
 }
 
 .main-container {
