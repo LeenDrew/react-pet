@@ -20,7 +20,6 @@ export default function App(): React.ReactElement {
         <Switch>
           <Route exact path="/" render={() => <Main />} />
           <Route exact path="/news" render={() => <News />} />
-          <Route exact path="/login" render={() => <Login />} />
           <Route
             exact
             path="/profile"
