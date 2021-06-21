@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { TodoItemType } from '../todoList/TodoList';
 import { toggleTodoAction, removeTodoAction } from '../../store/actions/todoActions';
@@ -11,6 +11,7 @@ export default function TodoItem({ todoItem }: TodoItemProps): React.ReactElemen
   const dispatch = useDispatch();
 
   return (
+    // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className="list-group-item">
       <input
         className="form-check-input position-relative ml-0 mr-3"

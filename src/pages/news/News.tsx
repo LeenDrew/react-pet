@@ -17,6 +17,7 @@ export default function News(): React.ReactElement {
       const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=9');
       setNewsArticleList(response.data);
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log(e);
     }
   };

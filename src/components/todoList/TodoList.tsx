@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FormEvent } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Alert from '../alert/Alert';
 import TodoItem from '../todoItem/TodoItem';
@@ -25,7 +25,9 @@ export default function TodoList(): React.ReactElement {
 
   const addTodoHandler = (e: FormEvent) => {
     e.preventDefault();
-    dispatch(addTodoAction(inputValue));
+    if (inputValue.trim().length) {
+      dispatch(addTodoAction(inputValue));
+    }
     setInputValue('');
   };
 

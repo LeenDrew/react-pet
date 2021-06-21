@@ -9,6 +9,7 @@ const initialState: LoginState = {
   isLoginned: null || false,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (state = initialState, { type, payload }: ActionModel): LoginState => {
   switch (type) {
     case ActionType.LOGIN:

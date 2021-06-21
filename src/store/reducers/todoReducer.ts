@@ -19,6 +19,7 @@ export default (state = initialState, { type, payload }: ActionModel): TodoState
         ...state,
         todoList: [
           ...state.todoList,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           { id: Date.now(), title: payload, completed: false } as TodoItemType,
         ],
       };
